@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" id="c1"></a-box>
+      <a-box position="1 0.5 -3" rotation="0 45 0" color="#4CC3D9" id="c2"></a-box>
+      <a-sphere position="0 0 500" radius="0.5" color="#EF2D5E" id="c"></a-sphere>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+    <script>
+
+        const posInt = (a,b) => ({x:(a.x+b.x)/2,y:(a.y+b.y)/2,z:(a.z+b.z)/2})
+
+
+        let a = c1.object3D.position
+        let b = c2.object3D.position
+
+        let np = posInt(a,b)
+        c.object3D.position.x =  np.x
+        c.object3D.position.y =  np.y
+        c.object3D.position.z =  np.z
+    </script>
+  </body>
+</html>

@@ -37,3 +37,7 @@ Ejemplo vr con modelo Static
 
 
 ![IMG](./marker/marker_clash.png)
+
+![IMG](./marker/barcodes/00.png)
+
+![IMG](./marker/barcodes/01.png)
