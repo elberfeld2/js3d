@@ -45,10 +45,11 @@ Ejemplo vr con modelo Static
 
 Interación entre dos marcadores.
 
-[Ver..](https://elberfeld2.github.io/js3d/a_frame/Interacion.html)
+[Ver..](https://elberfeld2.github.io/js3d/a_frame/interacion.html)
 
 
 ![IMG](./marker/barcodes/00.png)
 
 
 ![IMG](./marker/barcodes/01.png)
+
