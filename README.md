@@ -13,7 +13,15 @@
 Una muy buena opcion si se cuenta con las imagenes.
 En este ejemplo inclui responsivida y interacion con el mause.
 
-[Falso 360](https://github.com/stemkoski/falso-360)
+[Falso 360](https://elberfeld2.github.io/js3d/falso-360)
+
+
+## Model viewer
+
+[Muebles](https://elberfeld2.github.io/js3d/model_viewer/)
+
+[modelviewer](https://modelviewer.dev/)
+
 
 ## ARJS
 
@@ -22,12 +30,6 @@ En este ejemplo inclui responsivida y interacion con el mause.
 [AR.js-Docs](https://ar-js-org.github.io/AR.js-Docs/)
 
 AR.js-examples [Github](https://github.com/stemkoski/AR.js-examples/) [Demo](https://stemkoski.github.io/AR-Examples/)
-
-## Model viewer
-
-[Muebles](https://elberfeld2.github.io/js3d/model_viewer/)
-
-[modelviewer](https://modelviewer.dev/)
 
 ## Paginas
 
