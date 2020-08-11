@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Falso 360 Responsivo</title>
+	<style>
+		body {
+			height: 100vh;
+			margin: 0;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+		}
+
+		input {
+			width: 768px;
+		}
+	</style>
+</head>
+
+<body onresize="resize_canvas()">
+	<canvas id="canvas" width="768" height="512"></canvas>
+	<input type="range" min="1" max="36" step="1" value="1" id="slider">
+	<script>
+	let tamano = 768
+    const slider = document.querySelector('#slider')
+    const canvas = document.querySelector('#canvas')
+    const ctx = canvas.getContext('2d')
+    const images = []
+    slider.addEventListener('input', handleInputSlider)
+    window.addEventListener('load', pageLoaded)
+
+    
+    function pageLoaded() {
+      for (let i = 1; i <= 36; i += 1) {
+        const number = (37-i).toString().padStart(2, '00')
+        const url = `https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Yecheil/Images/adidas-Yeezy-Boost-350-V2-Yecheil/Lv2/img${number}.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1574449122`
+        const image = new Image()
+        image.src = url
+        image.addEventListener('load', () => {
+          images[i] = image
+          if (i === 1) {
+            loadImage(i)
+          }
+        })
+      }
+    }
+
+    function loadImage(index) {
+      ctx.drawImage(images[index], 0, 0, canvas.width, canvas.height)
+    }
+
+    function handleInputSlider() {
+      loadImage(this.value)
+    }
+
+    canvas.onmousemove = (e)=>{
+        let position = e.offsetX
+        let aux = parseInt(((position)/tamano)*36 + 1 )
+        slider.value = (parseInt(aux))
+        loadImage(slider.value)
+    }
+
+
+    function resize_canvas(first = false){
+        if(window.innerWidth>800){
+            canvas.width = 768
+            canvas.height = 512
+        }
+        else if(window.innerWidth>400){
+            canvas.width = 350
+            canvas.height = 300
+        }
+        else{
+            canvas.width = window.innerWidth*0.9
+            canvas.height = window.innerWidth*0.6
+        }
+        slider.style.width = canvas.width+"px"
+        tamano = canvas.width
+        if(!first)
+            loadImage(slider.value)
+    }
+    resize_canvas(true)
+	</script>
+</body>
+
+</html>

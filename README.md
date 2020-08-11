@@ -8,6 +8,13 @@
 
 [Ejemplos](https://github.com/stemkoski/A-Frame-Examples)
 
+## Falso 360
+
+Una muy buena opcion si se cuenta con las imagenes.
+En este ejemplo inclui responsivida y interacion con el mause.
+
+[Falso 360](https://github.com/stemkoski/falso-360)
+
 ## ARJS
 
 [ArJsStudio](https://ar-js-org.github.io/studio/)
