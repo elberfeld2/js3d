@@ -17,6 +17,8 @@ Ejemplo de vr con fotos 360
 [Mi proyecto](https://elberfeld2.github.io/js3d/a_frame/escenario2.html)
 
 
+[Vista 360 con comandos por voz](https://elberfeld2.github.io/js3d/a_frame/escenarioVoz.html)
+
 ## Inicial AR
 
 Ejemplo de vr con un archivo obj (Atronauta) con el marker hiro

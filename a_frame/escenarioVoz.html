@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>360&deg; Image Gallery</title>
-	<meta name="description" content="360&deg; Image Gallery - A-Frame">
+	<title>360&deg; Tour espacial</title>
+	<meta name="description" content="360&deg; Tour espacial - A-Frame">
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 	<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
 	<script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
@@ -16,7 +16,7 @@
             padding:0;
             margin:0;
         }
-		#targeta {
+		#tarjeta {
 			position: fixed;
 			top: 10px;
 			width: 100%;
@@ -24,7 +24,7 @@
 			z-index: 1;
 		}
 		#contenedor {
-			width: 200px;
+			width: 300px;
             display:inline-block;
             padding:5px;
             background-color:white;
@@ -77,11 +77,11 @@
 	</a-scene>
 
 
-	<div id="targeta">
+	<div id="tarjeta">
 		<div id="contenedor">
             <h4>Comandos por voz</h4>  
             <p>
-                tierra | nave | luna | inicio <br>
+                tierra | nave | luna | inicio | ocultar | mostrar<br>
                 <small id="comando">**Comando**</small>
             </p>
 
@@ -89,6 +89,14 @@
 	</div>
 </body>
 <script>
+
+    function mostrar(id){
+        document.getElementById(id).style.display = 'inline-block';
+    }
+    function ocultar(id){
+        document.getElementById(id).style.display = 'none';
+    }
+    ocultar("contenedor")
 	// Vistas
 	    const vistas =      [
                                 [[ 0, 0,-4],[ 0, 0, 0]],
@@ -154,6 +162,7 @@
                 })
             })
             ver(3)//Iniciamos con la opcion 3
+            setTimeout(()=>{ mostrar("contenedor") },5000)
         }()) 
 
 
@@ -165,7 +174,7 @@ let v = document.getElementById("image-360")
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 
-const grammar = '#JSGF V1.0; grammar actions; public <action> = tierra | nave | luna | inicio ;'
+const grammar = '#JSGF V1.0; grammar actions; public <action> = tierra | nave | luna | inicio | ocultar | mostrar ;'
 
 const speechRecognitionList = new SpeechGrammarList();
     speechRecognitionList.addFromString(grammar, 1);
@@ -177,9 +186,9 @@ const recognition = new SpeechRecognition();
     recognition.maxAlternatives = 1;
     
 recognition.onresult = function(event) {
-    let opcion = event.results[0][0].transcript
+    let opcion = event.results[0][0].transcript.toLocaleLowerCase()
     comando.innerText = `**${opcion}**`
-    if(["tierra","nave","luna","inicio"].includes(opcion))
+    if(["tierra","nave","luna","inicio","ocultar","mostrar"].includes(opcion))
         eval("myCommand." + opcion + "()");
 }
 recognition.onend = function() {
@@ -189,20 +198,22 @@ recognition.start();
 
 const myCommand = {
 	tierra : function(){
-  	//go to the next post
   	this.playCommand(0);
   },
  	nave : function(){
-  	//go to previous post
   	this.playCommand(2);  
   },
   luna : function(){
-  	//history.go(-1);
   	this.playCommand(1);
   },
   inicio : function(){
-  	//go to the homepage
   	this.playCommand(3);
+  },
+  ocultar : function(){
+  	ocultar("contenedor")
+  },
+  mostrar : function(){
+      mostrar("contenedor")
   },
   playCommand : function(n){    
     v.setAttribute("src",opciones[n].dataset.src)
