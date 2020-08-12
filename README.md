@@ -8,6 +8,8 @@
 
 [Ejemplos](https://github.com/stemkoski/A-Frame-Examples)
 
+[Vista 360 con comandos por voz](https://elberfeld2.github.io/js3d/a_frame/escenarioVoz.html)
+
 ## Falso 360
 
 Una muy buena opcion si se cuenta con las imagenes.
@@ -24,7 +26,7 @@ En este ejemplo inclui responsivida y interacion con el mause.
 
 
 ## ARJS
-
+ 
 [ArJsStudio](https://ar-js-org.github.io/studio/)
 
 [AR.js-Docs](https://ar-js-org.github.io/AR.js-Docs/)
@@ -39,5 +41,6 @@ AR.js-examples [Github](https://github.com/stemkoski/AR.js-examples/) [Demo](htt
 
 [Getbootstrap](https://v5.getbootstrap.com/docs/5.0/) 
 
+[flickr](https://www.flickr.com/)
 
 

@@ -1,0 +1,63 @@
+
+<p id="text"></p>
+
+<script>
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+
+const grammar = '#JSGF V1.0; grammar actions; public <action> = siguiente | anterior | volver | inicio | baja | arriba;'
+
+const speechRecognitionList = new SpeechGrammarList();
+    speechRecognitionList.addFromString(grammar, 1);
+
+const recognition = new SpeechRecognition();
+    recognition.grammars = speechRecognitionList;
+    recognition.lang = 'es-ES';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    
+recognition.onresult = function(event) {
+  eval("myCommand." + event.results[0][0].transcript + "()");
+}
+recognition.onend = function() {
+  recognition.start();
+}
+recognition.start();
+
+const myCommand = {
+	siguiente : function(){
+  	//go to the next post
+  	this.writeCommand("siguiente");
+  },
+ 	anterior : function(){
+  	//go to previous post
+  	this.writeCommand("anterior");  
+  },
+  volver : function(){
+  	//history.go(-1);
+  	this.writeCommand("volver");
+  },
+  inicio : function(){
+  	//go to the homepage
+  	this.writeCommand("inicio");
+  },
+ 	baja : function(){
+  	//scroll down
+  	this.writeCommand("baja");
+  },
+  arriba : function(){
+    //scroll to top
+  	this.writeCommand("arriba");
+  },
+  writeCommand : function(_command){
+    let comma = ", ";
+    if (document.querySelector("#text").innerHTML.length == 0){
+    	comma = "";
+    }
+  	document.querySelector("#text").innerHTML += comma + _command;
+    console.log(recognition); 
+  }
+}
+
+</script>
