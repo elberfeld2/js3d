@@ -15,6 +15,18 @@ Ejemplo de vr con un archivo obj (Atronauta) con el marker hiro
 
 ![IMG](./marker/marker_hiro.png)
 
+## Vista 360
+
+Ejemplo de vr con fotos 360
+
+[Ejemplo](https://elberfeld2.github.io/js3d/a_frame/ecenario.html)
+
+
+[Mi proyecto](https://elberfeld2.github.io/js3d/a_frame/escenario2.html)
+
+
+![IMG](./marker/marker_hiro.png)
+
 ## Clash
 
 Ejemplo vr con obj y marker propio generado en [ArJsStudio](https://ar-js-org.github.io/studio/)
