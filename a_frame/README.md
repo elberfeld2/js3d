@@ -6,14 +6,6 @@
 
 [Ver..](https://elberfeld2.github.io/js3d/a_frame/introducion.html)
 
-## Inicial AR
-
-Ejemplo de vr con un archivo obj (Atronauta) con el marker hiro
-
-[Ver..](https://elberfeld2.github.io/js3d/a_frame/inicial.html)
-
-
-![IMG](./marker/marker_hiro.png)
 
 ## Vista 360
 
@@ -23,6 +15,13 @@ Ejemplo de vr con fotos 360
 
 
 [Mi proyecto](https://elberfeld2.github.io/js3d/a_frame/escenario2.html)
+
+
+## Inicial AR
+
+Ejemplo de vr con un archivo obj (Atronauta) con el marker hiro
+
+[Ver..](https://elberfeld2.github.io/js3d/a_frame/inicial.html)
 
 
 ![IMG](./marker/marker_hiro.png)
