@@ -43,4 +43,6 @@ AR.js-examples [Github](https://github.com/stemkoski/AR.js-examples/) [Demo](htt
 
 [flickr](https://www.flickr.com/)
 
+[arjs](https://aframe.io/blog/arjs/)
 
+[Generator de markers](https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html)
